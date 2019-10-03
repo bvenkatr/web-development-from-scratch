@@ -9,6 +9,7 @@
 		"generate": "node book.js"
 	},
 	"dependencies": {
+		"md-to-pdf": "^2.8.1",
 		"mdpdf": "^2.0.4"
 	}
 }

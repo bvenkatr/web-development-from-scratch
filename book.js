@@ -1,6 +1,7 @@
-const mdpdf = require('mdpdf')
 const path = require('path')
 const fs = require('fs')
+const mdpdf = require('mdpdf')
+const mdToPdf = require('md-to-pdf')
 
 const outputMd = 'output/combined.md'
 const outputPdf = 'output/combined.pdf'
@@ -18,16 +19,6 @@ const combinedMdStream = async text =>
 			console.log('Added')
 		}
 	})
-
-let options = {
-	source: path.join(__dirname, outputMd),
-	destination: path.join(__dirname, outputPdf),
-	// styles: path.join(__dirname, 'md-styles.css'),
-	pdf: {
-		format: 'A4',
-		orientation: 'portrait'
-	}
-}
 
 const getChapters = async () => {
 	return fs
@@ -49,6 +40,23 @@ const combineFiles = async () => {
 }
 
 const generatePdf = async () => {
+	let options = {
+		source: path.join(__dirname, outputMd),
+		destination: path.join(__dirname, outputPdf),
+		pdf: {
+			format: 'A4',
+			orientation: 'portrait'
+		}
+
+		// format: 'A4',
+		// 	margin: '30mm 20mm',
+		// 	displayHeaderFooter: true,
+		// 	headerTemplate: `<section>
+		// 			<span class="date"></span>
+		// 		</section>`,
+		// 	footerTemplate: `<div id="pageFooter" style="text-align:center">Page {{page}} on {{pages}}</div>`
+	}
+
 	await cleanFile()
 	await combineFiles()
 
@@ -60,6 +68,11 @@ const generatePdf = async () => {
 		.catch(err => {
 			console.error(err)
 		})
+
+	// await mdToPdf(outputMd, {
+	// 	dest: outputPdf,
+	// 	pdf_options: options
+	// }).catch(console.error)
 }
 
 generatePdf()
