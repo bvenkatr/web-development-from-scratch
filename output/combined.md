@@ -1,17 +1,8 @@
+
+<div style="page-break-after: always;"></div>
 # chapter 1
 
-aaa,# chapter 2# chapter 1
+aaa
 
-aaa,# chapter 2# chapter 1
-
-aaa,# chapter 2# chapter 1
-
-aaa,# chapter 2# chapter 1
-
-aaa,# chapter 2# chapter 1
-
-aaa,# chapter 2# chapter 1
-
-aaa,# chapter 2# chapter 1
-
-aaa,# chapter 2
+<div style="page-break-after: always;"></div>
+# chapter 2
