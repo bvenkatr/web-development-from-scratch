@@ -1,0 +1,14 @@
+{
+	"name": "web-development-from-scratch",
+	"version": "0.0.1",
+	"main": "index.js",
+	"repository": "https://github.com/halvardssm/web-development-from-scratch.git",
+	"author": "Halvard Mørstad <halvard@moerstad.no>",
+	"license": "GPL-3.0-or-later",
+	"scripts": {
+		"generate": "node book.js"
+	},
+	"dependencies": {
+		"mdpdf": "^2.0.4"
+	}
+}
