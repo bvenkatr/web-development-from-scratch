@@ -8,7 +8,8 @@
 	"scripts": {
 		"generate": "node book.js"
 	},
-	"dependencies": {
+	"devDependencies": {
+		"markdown-pdf": "^10.0.0",
 		"md-to-pdf": "^2.8.1",
 		"mdpdf": "^2.0.4"
 	}
